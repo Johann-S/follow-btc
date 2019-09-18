@@ -1,0 +1,27 @@
+{
+  "name": "follow-btc",
+  "version": "1.0.0",
+  "description": "Follow BTC evolution",
+  "main": "main.js",
+  "scripts": {
+    "start": "node .",
+    "build": "pkg main.js --targets node10-win-x64,node10-macos-x64 --out-path dist"
+  },
+  "keywords": [
+    "bitcoin",
+    "btc",
+    "bitstamp",
+    "follow"
+  ],
+  "author": "Johann-S <johann.servoire@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "inquirer": "^7.0.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  },
+  "devDependencies": {
+    "pkg": "^4.4.0"
+  }
+}
