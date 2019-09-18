@@ -3,6 +3,10 @@
 [![dependencies Status](https://img.shields.io/david/Johann-S/bs-stepper.svg)](https://david-dm.org/Johann-S/follow-btc)
 [![devDependencies Status](https://img.shields.io/david/dev/Johann-S/bs-stepper.svg)](https://david-dm.org/Johann-S/follow-btc?type=dev)
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Johann-S/follow-btc/master/img/follow-btc.jpg" alt="follow-btc">
+</p>
+
 A small cli to follow btc evolution
 
 Currently only **Bitstamp** is allowed.
