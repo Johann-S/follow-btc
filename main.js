@@ -14,7 +14,6 @@ const symbolPair = {
   'btcusd': '$'
 }
 
-let interval = 1
 let chosenPair = pairs['BTC/€']
 let symbol = symbolPair['btceur']
 let lastTrigger
@@ -31,9 +30,9 @@ const triggerData = async () => {
 
 const updateTitle = title => {
   if (process.platform === 'win32') {
-		process.title = title;
+		process.title = title
 	} else {
-		process.stdout.write(`\x1b]2;${title}\x1b\x5c`);
+		process.stdout.write(`\x1b]2;${title}\x1b\x5c`)
 	}
 }
 
@@ -85,6 +84,7 @@ const main = async () => {
   chosenPair = pairs[pair]
   symbol = symbolPair[chosenPair]
 
+  let interval = 1
   const { chosenInterval } = await prompt([{
     type: 'input',
     name: 'chosenInterval',
