@@ -19,6 +19,7 @@ let chosenPair = pairs['BTC/€']
 let symbol = symbolPair['btceur']
 let lastTrigger
 let lastPrice
+let providerName
 let getData
 
 const triggerData = async () => {
@@ -55,22 +56,22 @@ const displayBtcPrice = newLastPrice => {
     }
   }
 
-  updateTitle(`Follow BTC evolution... Current price: ${newLastPrice}${symbol}`)
+  updateTitle(`Follow BTC evolution on ${providerName}... Current price: ${newLastPrice}${symbol}`)
   lastPrice = newLastPrice
 }
 
 const main = async () => {
   updateTitle('Follow BTC evolution...')
-  console.log('Follow BTC evolution... \n')
 
-  const { providerName } = await prompt([{
+  const { chosenProviderName } = await prompt([{
     type: 'list',
-    name: 'providerName',
+    name: 'chosenProviderName',
     message: `Provider?`,
     choices: providerList,
     default: 0
   }])
 
+  providerName = chosenProviderName
   getData = getDataProvider(providerName)
 
   const { pair } = await prompt([{
@@ -88,7 +89,7 @@ const main = async () => {
     type: 'input',
     name: 'chosenInterval',
     message: `Refresh interval (minutes):`,
-    default: `${interval}min`,
+    default: interval,
     validate(input) {
       return isNaN(input) ?
         'Please enter a valid number' :
