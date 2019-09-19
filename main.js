@@ -1,6 +1,7 @@
-const rp = require('request-promise')
 const { blue, green, red, bold } = require('chalk')
 const { prompt } = require('inquirer')
+
+const { providerList, getDataProvider } = require('./providers/index')
 
 const hundredPercent = 100
 const minuteMs = 60000
@@ -12,24 +13,19 @@ const symbolPair = {
   'btceur': '€',
   'btcusd': '$'
 }
-const bitStampUrl = {
-  hour(pair) {
-    return `https://www.bitstamp.net/api/v2/ticker_hour/${pair}/`
-  }
-}
 
 let interval = 1
 let chosenPair = pairs['BTC/€']
 let symbol = symbolPair['btceur']
 let lastTrigger
 let lastPrice
+let getData
 
 const triggerData = async () => {
-  const result = await rp(bitStampUrl.hour(chosenPair))
-  const data = JSON.parse(result)
+  const last = await getData(chosenPair)
 
   lastTrigger = new Date()
-  displayBtcPrice(parseFloat(data.last))
+  displayBtcPrice(last)
 }
 
 const displayBtcPrice = newLastPrice => {
@@ -55,7 +51,17 @@ const displayBtcPrice = newLastPrice => {
 }
 
 const main = async () => {
-  console.log('Follow BTC evolution on Bitstamp... \n')
+  console.log('Follow BTC evolution... \n')
+
+  const { providerName } = await prompt([{
+    type: 'list',
+    name: 'providerName',
+    message: `Provider?`,
+    choices: providerList,
+    default: 0
+  }])
+
+  getData = getDataProvider(providerName)
 
   const { pair } = await prompt([{
     type: 'list',

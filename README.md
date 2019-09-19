@@ -11,6 +11,7 @@ A small cli to follow btc evolution
 
 Providers:
   - [x] Bitstamp
+  - [x] Coinbase
   - [ ] Binance
 
 ## Support me
