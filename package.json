@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Follow BTC evolution",
   "main": "main.js",
+  "private": true,
   "scripts": {
     "start": "node .",
     "build": "pkg main.js --targets node10 --out-path dist"
@@ -11,6 +12,7 @@
     "bitcoin",
     "btc",
     "bitstamp",
+    "coinbase",
     "follow"
   ],
   "author": "Johann-S <johann.servoire@gmail.com>",
