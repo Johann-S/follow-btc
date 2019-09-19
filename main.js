@@ -28,6 +28,14 @@ const triggerData = async () => {
   displayBtcPrice(last)
 }
 
+const updateTitle = title => {
+  if (process.platform === 'win32') {
+		process.title = title;
+	} else {
+		process.stdout.write(`\x1b]2;${title}\x1b\x5c`);
+	}
+}
+
 const displayBtcPrice = newLastPrice => {
   if (lastPrice) {
     const newPercent = (newLastPrice * 100) / lastPrice
@@ -47,10 +55,12 @@ const displayBtcPrice = newLastPrice => {
     }
   }
 
+  updateTitle(`Follow BTC evolution... Current price: ${newLastPrice}${symbol}`)
   lastPrice = newLastPrice
 }
 
 const main = async () => {
+  updateTitle('Follow BTC evolution...')
   console.log('Follow BTC evolution... \n')
 
   const { providerName } = await prompt([{
