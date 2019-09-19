@@ -13,6 +13,7 @@
     "btc",
     "bitstamp",
     "coinbase",
+    "kraken",
     "follow"
   ],
   "author": "Johann-S <johann.servoire@gmail.com>",

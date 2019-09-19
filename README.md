@@ -12,7 +12,7 @@ A small cli to follow btc evolution on different providers
 Providers:
   - [x] Bitstamp
   - [x] Coinbase
-  - [ ] Binance
+  - [x] Kraken
 
 ## Support me
 
