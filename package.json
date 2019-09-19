@@ -1,7 +1,7 @@
 {
   "name": "follow-btc",
   "version": "1.0.0",
-  "description": "Follow BTC evolution",
+  "description": "Follow BTC evolution on different providers",
   "main": "main.js",
   "private": true,
   "scripts": {

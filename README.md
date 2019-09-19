@@ -3,11 +3,11 @@
 [![dependencies Status](https://img.shields.io/david/Johann-S/follow-btc.svg)](https://david-dm.org/Johann-S/follow-btc)
 [![devDependencies Status](https://img.shields.io/david/dev/Johann-S/follow-btc.svg)](https://david-dm.org/Johann-S/follow-btc?type=dev)
 
+A small cli to follow btc evolution on different providers
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/Johann-S/follow-btc/master/img/follow-btc.jpg" alt="follow-btc">
 </p>
-
-A small cli to follow btc evolution
 
 Providers:
   - [x] Bitstamp
