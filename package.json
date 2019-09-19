@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "node .",
-    "build": "pkg main.js --targets node10 --out-path dist"
+    "build": "pkg main.js --targets node8 --out-path dist"
   },
   "keywords": [
     "bitcoin",
